@@ -1,0 +1,50 @@
+/***************************************************************************************************************************************************
+        Author: Antonio Santos
+        Last date of editting: 9/30/2016
+        Assignment: Card Class PRG and Deck Class PRG
+***************************************************************************************************************************************************/
+#include "Deck.h"
+#include <iostream>
+//#include "Card.h"
+#include <ctime>
+#include <stdlib.h>
+using namespace std;
+
+/***************************************************************************************************************************************************
+        Function name: main()
+        Description: this is where all the magic happens and everything gets pulled together for the user 
+***************************************************************************************************************************************************/
+int main(){
+/*	int test1 = 0, test11 = 0;
+	int test2 = 1, test22 = 1;
+	Card testone, testtwo(1,1);
+	//TEST 1: build a default card. expected output is: Joker
+	cout << "Test 1: buid a default card. Expected output: JOKER --- " << testone.toString() << endl;
+	//TEST 2: build a card. expected result: hearts of ace 
+	cout << "Test 2: build a card. Expected output: HEARTS OF ACE --- " << testtwo.toString() << endl;
+*/
+	
+	//following is added for Deck class assignment
+	Deck d;
+	int count = 0, inDeck = 52;
+	char choice;
+	srand(time(0));
+                                                                                                                                                            for(int x = 0; x < 52; x++)
+		cout << d.printCards(x) << endl;
+	do{
+		cout << "Random Card Drawn: " << endl;
+		cout << d.checkRandom()->toString() << endl << endl;
+		inDeck--;
+
+		cout << "Draw another random card? (y/n) ";
+		cin >> choice;
+		cout << endl;		
+		if(islower(choice))
+			choice = toupper(choice);
+	}while((choice == 'Y') && (inDeck !=0));
+	
+	cout << "Numer of cards drawn: " << count << endl;
+	cout << "Number of cards in deck: " << inDeck  << endl;
+	return 0;	
+}
+
